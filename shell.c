@@ -28,6 +28,8 @@ int main( int argc, char *argv[], char *env[] )
 			{
 				printf("%d. %s\n", j+1, history[j]);
 			}
+			strcpy(history[commandCount], command);
+			commandCount++;
 			continue;
 		} else if (strcmp(command, "exit") == 0) {
 			return 0;
