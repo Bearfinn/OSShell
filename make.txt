@@ -7,4 +7,4 @@ shell.o: shell.c
 	gcc -c shell.c
 
 clean:
-	rm shell.o
+	rm shell.o shell.exe
