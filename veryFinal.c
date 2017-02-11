@@ -78,7 +78,7 @@ int main( int argc, char *argv[], char *env[] )
 		}
 		else
 		{
-			(NULL);
+			wait(NULL);
 		}
 	}
    return 0;
