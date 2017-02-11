@@ -10,6 +10,7 @@ int main( int argc, char *argv[], char *env[] )
 	pid_t child_pid;
 	int status;
 	char command[1001];
+	char temp[1001];
 	char history[1001][1001];
 	char *token;
 	char *args[10];
