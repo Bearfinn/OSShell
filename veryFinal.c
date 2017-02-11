@@ -24,7 +24,7 @@ int main( int argc, char *argv[], char *env[] )
 		command[strlen(command) - 1] = '\0';
 
 		strcpy(temp, command);
-		
+
 		token = strtok(command, " ");
 		int j = 0;
 		while( token != NULL ) 
@@ -35,7 +35,7 @@ int main( int argc, char *argv[], char *env[] )
 		}
 
 		if (strcmp(args[0], "history") == 0) {
-			int j = 0, k = 0;
+			int j = 0, k=0;
 			for (j = 0; j < commandCount; j++)
 			{
 				while(i<strlen(history[j])) {
@@ -43,31 +43,22 @@ int main( int argc, char *argv[], char *env[] )
 					    for (k=i; k<strlen(history[j]); k++)
 						history[j][k]=history[j][k+1];   
 					} else break;
-				}
+				    }
 				printf("%d. %s\n", j+1, history[j]);
 			}
-			if (commandCount>=100) {
-				for(i=0; i<commandCount-1; i++) {
-					strcpy(history[i], history[i+1]);
-				}
-				strcpy(history[i], temp);
-			} else {
-				strcpy(history[commandCount], temp);
-				commandCount++;
-			}
-			continue;
+			
 		} else if (strcmp(args[0], "exit") == 0) {
 			return 0;
 		} else {
-			if (commandCount>=100) {
-				for(i=0; i<commandCount-1; i++) {
-					strcpy(history[i], history[i+1]);
-				}
-				strcpy(history[i], temp);
-			} else {
-				strcpy(history[commandCount], temp);
-				commandCount++;
+		}
+		if (commandCount>=100) {
+			for(i=0; i<commandCount-1; i++) {
+				strcpy(history[i], history[i+1]);
 			}
+			strcpy(history[i], temp);
+		} else {
+			strcpy(history[commandCount], temp);
+			commandCount++;
 		}
 
 		args[j] = NULL;
