@@ -50,22 +50,22 @@ int main( int argc, char *argv[], char *env[] )
 				for(i=0; i<commandCount-1; i++) {
 					strcpy(history[i], history[i+1]);
 				}
-				strcpy(history[i], command);
+				strcpy(history[i], temp);
 			} else {
-				strcpy(history[commandCount], command);
+				strcpy(history[commandCount], temp);
 				commandCount++;
 			}
 			continue;
-		} else if (strcmp(command, "exit") == 0) {
+		} else if (strcmp(args[0], "exit") == 0) {
 			return 0;
 		} else {
 			if (commandCount>=100) {
 				for(i=0; i<commandCount-1; i++) {
 					strcpy(history[i], history[i+1]);
 				}
-				strcpy(history[i], command);
+				strcpy(history[i], temp);
 			} else {
-				strcpy(history[commandCount], command);
+				strcpy(history[commandCount], temp);
 				commandCount++;
 			}
 		}
