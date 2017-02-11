@@ -1,0 +1,3 @@
+makefile, debug - Naensinee Soongsiri 5888165
+Skeleton code, string token, fork, exec - Kritsada Sunthornwutthikrai 5888182
+history command, debug- Amonnat Tengputtipong 5888202
