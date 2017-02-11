@@ -42,7 +42,7 @@ int main( int argc, char *argv[], char *env[] )
 
 		//printf("Untokenized: %s\n", command);
 		token = strtok(command, " "); //separate white space
-		while( token != NULL )
+		while( token != NULL ) //split string into array
 		{
 			args[i] = token;
 			i++;
@@ -53,7 +53,7 @@ int main( int argc, char *argv[], char *env[] )
 		   perror("Fork Failed: ");
 		   exit(1);
 		}
-		else if(child_pid == 0) //
+		else if(child_pid == 0) // it's a child process
 		{
 		   execvp(command, args);
 		   perror("Execution Failed: ");
