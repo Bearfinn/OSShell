@@ -34,9 +34,15 @@ int main( int argc, char *argv[], char *env[] )
 		}
 
 		if (strcmp(args[0], "history") == 0) {
-			int j = 0;
+			int j = 0, k = 0;
 			for (j = 0; j < commandCount; j++)
 			{
+				while(i<strlen(history[j])) {
+					if (history[j][i]==' ') { 
+					    for (k=i; k<strlen(history[j]); k++)
+						history[j][k]=history[j][k+1];   
+					} else break;
+				}
 				printf("%d. %s\n", j+1, history[j]);
 			}
 			if (commandCount>=100) {
