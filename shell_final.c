@@ -28,7 +28,7 @@ int main( int argc, char *argv[], char *env[] )
 			{
 				printf("%d. %s\n", j+1, history[j]);
 			}
-			if (commandCount>=1000) {
+			if (commandCount>=100) {
 				for(i=0; i<commandCount-1; i++) {
 					strcpy(history[i], history[i+1]);
 				}
@@ -41,7 +41,7 @@ int main( int argc, char *argv[], char *env[] )
 		} else if (strcmp(command, "exit") == 0) {
 			return 0;
 		} else {
-			if (commandCount>=1000) {
+			if (commandCount>=100) {
 				for(i=0; i<commandCount-1; i++) {
 					strcpy(history[i], history[i+1]);
 				}
