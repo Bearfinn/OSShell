@@ -22,10 +22,10 @@ int main( int argc, char *argv[], char *env[] )
 		fgets(command, 1000, stdin);
 		command[strlen(command) - 1] = '\0';
 
+		strcpy(temp, command);
+		
 		token = strtok(command, " ");
-
 		int j = 0;
-
 		while( token != NULL ) 
 		{
 			args[j] = token;
