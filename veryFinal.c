@@ -71,7 +71,7 @@ int main( int argc, char *argv[], char *env[] )
 		else if(child_pid == 0)
 		{
 			execvp(args[0], args);
-			perror("Execution Failed: ");
+			if(strcmp(args[0], "history") != 0) perror("Execution Failed: ");
 			exit(0);
 		}
 		else
