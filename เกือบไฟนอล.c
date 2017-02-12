@@ -110,9 +110,10 @@ int main( int argc, char *argv[], char *env[] )
 			int k=0;
 
 			if(strcmp(args[0],"!!") == 0){
-
-				token = strtok(history[commandCount-1]," ");
 				strcpy(temp, history[commandCount-1]);
+
+				token = strtok(temp," ");
+
 
 				while( token != NULL )
 
@@ -131,9 +132,9 @@ int main( int argc, char *argv[], char *env[] )
 			if(isdigit(args[0][1])){
 
 				int check = args[0][1] - '0';
-
-				token = strtok(history[check-1]," ");
 				strcpy(temp, history[check-1]);
+
+				token = strtok(temp," ");
 
 				while( token != NULL )
 
@@ -153,9 +154,10 @@ int main( int argc, char *argv[], char *env[] )
 				if(isdigit(args[0][2])){
 					check = check+(args[0][2] - '0');
 				}
-
-				token = strtok(history[check-1]," ");
 				strcpy(temp, history[check-1]);
+
+				token = strtok(temp," ");
+
 
 				while( token != NULL )
 
