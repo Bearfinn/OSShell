@@ -105,73 +105,11 @@ int main( int argc, char *argv[], char *env[] )
 
 		}
 
-		/*else if(strcmp(args[0],"!!") == 0){
-
-			int k=0;
-
-			token = strtok(history[commandCount-1]," ");
-
-			while( token != NULL )
-
-			{
-
-				args[k] = token;
-
-				k++;
-
-				token = strtok(NULL, " ");
-
-			}
-
-
-
-			/*arg[k] = NULL;
-
-			child_pid = fork();
-
-			if(child_pid < 0)
-
-			{
-
-				perror("Fork Failed: ");
-
-				exit(1);
-
-			}
-
-			else if(child_pid == 0)
-
-			{
-
-				execvp(arg[0], arg);
-
-				perror("Execution Failed: ");
-
-				exit(0);
-
-			}
-
-			else
-
-			{
-
-				wait(NULL);
-
-			}
-
-		} /*else if(regcomp(args[0],tofind,REG_EXTENDED)==0){
-
-			printf("Helo");
-
-		}*/
-
 		else if(args[0][0] == '!'){
 
 			int k=0;
 
 			if(strcmp(args[0],"!!") == 0){
-
-printf("jeree");
 
 				token = strtok(history[commandCount-1]," ");
 				strcpy(temp, history[commandCount-1]);
@@ -191,7 +129,6 @@ printf("jeree");
 			}
 
 			if(isdigit(args[0][1])){
-printf("digit");
 
 				int check = args[0][1] - '0';
 
@@ -211,7 +148,7 @@ printf("digit");
 				}
 
 			}
-			if(args[0][2] != '\0'){
+			if(strlen(args[0]) == 3){
 				int check = (args[0][1] - '0')*10;
 				if(isdigit(args[0][2])){
 					check = check+(args[0][2] - '0');
