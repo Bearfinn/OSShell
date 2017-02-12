@@ -25,6 +25,7 @@ int main( int argc, char *argv[], char *env[] )
 	char command[1001];
 
 	char temp[1001];
+	char tempp[1001];
 
 	char history[1001][1001];
 
@@ -111,8 +112,9 @@ int main( int argc, char *argv[], char *env[] )
 
 			if(strcmp(args[0],"!!") == 0){
 				strcpy(temp, history[commandCount-1]);
+				strcpy(tempp, history[commandCount-1]);
 
-				token = strtok(temp," ");
+				token = strtok(tempp," ");
 
 
 				while( token != NULL )
@@ -133,8 +135,9 @@ int main( int argc, char *argv[], char *env[] )
 
 				int check = args[0][1] - '0';
 				strcpy(temp, history[check-1]);
+				strcpy(tempp, history[check-1]);
 
-				token = strtok(temp," ");
+				token = strtok(tempp," ");
 
 				while( token != NULL )
 
@@ -155,8 +158,9 @@ int main( int argc, char *argv[], char *env[] )
 					check = check+(args[0][2] - '0');
 				}
 				strcpy(temp, history[check-1]);
+				strcpy(tempp, history[check-1]);
 
-				token = strtok(temp," ");
+				token = strtok(tempp," ");
 
 
 				while( token != NULL )
